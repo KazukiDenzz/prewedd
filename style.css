@@ -1,0 +1,2134 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f1eb;
+    color: #3d3832;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f5f1eb;
+    color: #3d3832;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.opening-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+}
+
+.opening-label {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.opening-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(48px, 8vw, 90px);
+
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.opening-date {
+    margin-top: 18px;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.opening-greeting {
+    margin-top: 45px;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#openInvitation {
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border: 1px solid #3d3832;
+
+    background: transparent;
+    color: #3d3832;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+#openInvitation:hover {
+    background: #3d3832;
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 5000;
+
+    background: rgba(30, 27, 24, 0.45);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease;
+}
+
+.nav-logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    transition: color 0.3s ease;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    padding: 8px 12px;
+
+    border-radius: 2px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.7;
+}
+
+.navbar.scrolled {
+    background: rgba(245, 241, 235, 0.95);
+
+    color: #3d3832;
+
+    box-shadow:
+        0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.scrolled .nav-logo {
+    color: #3d3832;
+}
+
+.navbar.scrolled .nav-menu a {
+    color: #3d3832;
+}
+
+
+/* ACTIVE NAVBAR */
+
+.nav-menu a.active {
+    background: #3d3832 !important;
+    color: white !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image: url("images/couple.jpg");
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.38);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    padding: 30px;
+}
+
+.hero-label {
+    font-size: 12px;
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 10vw, 110px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+}
+
+.hero-date {
+    margin-top: 20px;
+
+    font-size: 14px;
+    letter-spacing: 5px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 14px 28px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.hero-button:hover {
+    background: white;
+    color: #3d3832;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    padding: 110px 8%;
+
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    opacity: 0.65;
+}
+
+.section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(35px, 5vw, 55px);
+
+    font-weight: normal;
+
+    line-height: 1.2;
+}
+
+.section-description {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    font-size: 14px;
+
+    opacity: 0.75;
+}
+
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple-section {
+    background: #f5f1eb;
+}
+
+.couple-container {
+    max-width: 900px;
+
+    margin: 70px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.person {
+    width: 280px;
+}
+
+.person-image {
+    width: 240px;
+    height: 300px;
+
+    margin: 0 auto 25px;
+
+    overflow: hidden;
+}
+
+.person-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.person h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.person p {
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+}
+
+.couple-symbol {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 50px;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story-section {
+    background: #ebe4da;
+}
+
+.story-timeline {
+    max-width: 800px;
+
+    margin: 70px auto 0;
+
+    text-align: left;
+}
+
+.story-item {
+    display: flex;
+
+    gap: 35px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid rgba(61, 56, 50, 0.18);
+}
+
+.story-year {
+    min-width: 80px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+}
+
+.story-content h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-weight: normal;
+}
+
+.story-content p {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   EVENT
+========================= */
+
+.event-section {
+    background: #f5f1eb;
+}
+
+.event-container {
+    max-width: 900px;
+
+    margin: 60px auto 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.event-card {
+    padding: 45px 30px;
+
+    border: 1px solid rgba(61, 56, 50, 0.2);
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.event-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+.event-line {
+    width: 40px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: #3d3832;
+}
+
+.event-card p {
+    font-size: 13px;
+
+    margin-top: 7px;
+
+    opacity: 0.75;
+}
+
+.maps-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: 1px solid #3d3832;
+
+    color: #3d3832;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.maps-button:hover {
+    background: #3d3832;
+    color: white;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background: #3d3832;
+
+    color: white;
+}
+
+.countdown-section .section-label {
+    opacity: 0.7;
+}
+
+.countdown-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(35px, 5vw, 55px);
+
+    font-weight: normal;
+}
+
+.countdown-container {
+    max-width: 700px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.countdown-box {
+    padding: 25px 10px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.countdown-box span {
+    display: block;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 40px;
+}
+
+.countdown-box small {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    background: #ebe4da;
+}
+
+.gallery-grid {
+    max-width: 1000px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99998;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp-section {
+    background: #f5f1eb;
+}
+
+#rsvpForm {
+    max-width: 600px;
+
+    margin: 50px auto 0;
+
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(61, 56, 50, 0.25);
+
+    background: white;
+
+    color: #3d3832;
+
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+
+    gap: 25px;
+}
+
+.radio-group label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0;
+
+    cursor: pointer;
+}
+
+.rsvp-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    background: #3d3832;
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.rsvp-button:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #3d3832;
+
+    color: white;
+}
+
+.footer p {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+}
+
+.footer small {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    z-index: 9000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 50%;
+
+    background: rgba(30,27,24,0.8);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.music-button.playing {
+    animation: musicRotate 3s linear infinite;
+}
+
+@keyframes musicRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 18px 20px;
+
+        justify-content: center;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .nav-menu {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 5px;
+    }
+
+    .nav-menu a {
+        padding: 7px 8px;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    .couple-container {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .couple-symbol {
+        font-size: 35px;
+    }
+
+
+    .person {
+        width: 100%;
+    }
+
+
+    .event-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .countdown-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .countdown-box span {
+        font-size: 32px;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .story-item {
+        gap: 20px;
+    }
+
+    .story-year {
+        min-width: 55px;
+
+        font-size: 18px;
+    }
+
+    .story-content h3 {
+        font-size: 21px;
+    }
+
+
+    .section {
+        padding: 85px 6%;
+    }
+
+
+    .opening-content h1 {
+        font-size: 52px;
+    }
+
+    .opening-label {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .opening-greeting {
+        margin-top: 35px;
+    }
+
+
+    .music-button {
+        right: 18px;
+        bottom: 18px;
+    }
+
+}/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Fade dari kiri */
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animate-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Fade dari kanan */
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animate-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Gallery stagger */
+
+.gallery-item.animate {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.gallery-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.gallery-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.gallery-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.gallery-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.gallery-item:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.gallery-item:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+
+/* Timeline stagger */
+
+.story-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.story-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.story-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.story-item:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+
+/* Event cards */
+
+.event-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.event-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .animate-left {
+        transform: translateX(-30px);
+    }
+
+    .animate-right {
+        transform: translateX(30px);
+    }
+
+}/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Fade dari kiri */
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animate-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Fade dari kanan */
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.animate-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Gallery stagger */
+
+.gallery-item.animate {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.gallery-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.gallery-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.gallery-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.gallery-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.gallery-item:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.gallery-item:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+
+/* Timeline stagger */
+
+.story-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.story-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.story-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.story-item:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+
+/* Event cards */
+
+.event-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.event-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .animate-left {
+        transform: translateX(-30px);
+    }
+
+    .animate-right {
+        transform: translateX(30px);
+    }
+
+}/* =========================
+   HERO CINEMATIC ANIMATION
+========================= */
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+body.invitation-open .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hero background cinematic zoom */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: -5%;
+
+    background-image: url("images/couple.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1);
+
+    transition:
+        transform 8s ease;
+    
+    z-index: 0;
+}
+
+body.invitation-open .hero::before {
+    transform: scale(1.08);
+}
+
+
+/* Overlay tetap di atas background */
+
+.hero-overlay {
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.hero-scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease 1s;
+}
+
+body.invitation-open .hero-scroll {
+    opacity: 0.8;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+
+    background: white;
+
+    animation:
+        scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+
+    0% {
+        transform: scaleY(0.3);
+        transform-origin: top;
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleY(0.3);
+        transform-origin: bottom;
+        opacity: 0.3;
+    }
+
+}
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-button {
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}/* =========================
+   PREMIUM GALLERY
+========================= */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+
+    background: #3d3832;
+}
+
+
+/* Image */
+
+.gallery-item img {
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease;
+}
+
+
+/* Overlay */
+
+.gallery-item::after {
+    content: "⌕";
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(30, 27, 24, 0.35);
+
+    color: white;
+
+    font-size: 35px;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* Hover */
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+
+    filter: brightness(0.75);
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   PREMIUM LIGHTBOX
+========================= */
+
+.lightbox {
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+.lightbox.show {
+    display: flex;
+
+    opacity: 1;
+}
+
+
+.lightbox img {
+    transform: scale(0.88);
+
+    opacity: 0;
+
+    transition:
+        transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+        opacity 0.5s ease;
+}
+
+
+.lightbox.show img {
+    transform: scale(1);
+
+    opacity: 1;
+}
+
+
+/* Close button */
+
+.lightbox-close {
+    opacity: 0;
+
+    transform: rotate(-20deg) scale(0.8);
+
+    transition:
+        opacity 0.4s ease 0.15s,
+        transform 0.4s ease 0.15s;
+}
+
+.lightbox.show .lightbox-close {
+    opacity: 1;
+
+    transform: rotate(0deg) scale(1);
+}
+
+
+.lightbox-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .gallery-item::after {
+        font-size: 28px;
+    }
+
+}/* =========================
+   RSVP MICRO INTERACTION
+========================= */
+
+
+/* Input, select, textarea */
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #3d3832;
+
+    box-shadow:
+        0 4px 15px rgba(61, 56, 50, 0.08);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   RADIO BUTTON
+========================= */
+
+.radio-group label {
+
+    padding: 10px 15px;
+
+    border: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.2s ease;
+
+}
+
+
+.radio-group label:hover {
+
+    border-color:
+        rgba(61, 56, 50, 0.2);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Radio yang dipilih */
+
+.radio-group label:has(input:checked) {
+
+    background: #3d3832;
+
+    color: white;
+
+    border-color: #3d3832;
+
+}
+
+
+/* =========================
+   RSVP BUTTON
+========================= */
+
+.rsvp-button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.rsvp-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(61, 56, 50, 0.18);
+
+    opacity: 1;
+
+}
+
+
+.rsvp-button:active {
+
+    transform: translateY(1px);
+
+    box-shadow:
+        0 3px 8px rgba(61, 56, 50, 0.15);
+
+}
+
+
+/* Efek kilatan saat hover */
+
+.rsvp-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.18),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+
+}
+
+
+.rsvp-button:hover::before {
+
+    left: 150%;
+
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.form-group select {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .radio-group {
+
+        gap: 10px;
+
+    }
+
+    .radio-group label {
+
+        padding: 9px 12px;
+
+        font-size: 12px;
+
+    }
+
+}/* =========================
+   MOBILE POLISH
+========================= */
+
+@media (max-width: 700px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        padding: 14px 10px;
+    }
+
+    .nav-menu {
+        gap: 3px;
+    }
+
+    .nav-menu a {
+        padding: 8px 7px;
+
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+
+    /* HERO */
+
+    .hero-content {
+        width: 100%;
+
+        padding: 25px 20px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 14vw, 65px);
+    }
+
+    .hero-date {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .hero-button {
+        margin-top: 30px;
+
+        padding: 13px 22px;
+
+        font-size: 10px;
+    }
+
+
+    /* SECTION */
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .section-description {
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    /* COUPLE */
+
+    .couple-container {
+        margin-top: 50px;
+
+        gap: 25px;
+    }
+
+    .person-image {
+        width: 210px;
+        height: 270px;
+    }
+
+    .person h3 {
+        font-size: 25px;
+    }
+
+    .couple-symbol {
+        font-size: 30px;
+    }
+
+
+    /* STORY */
+
+    .story-timeline {
+        margin-top: 45px;
+    }
+
+    .story-item {
+        gap: 15px;
+
+        padding: 25px 0;
+    }
+
+    .story-year {
+        min-width: 50px;
+
+        font-size: 17px;
+    }
+
+    .story-content h3 {
+        font-size: 20px;
+    }
+
+    .story-content p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* EVENT */
+
+    .event-container {
+        margin-top: 45px;
+
+        gap: 15px;
+    }
+
+    .event-card {
+        padding: 35px 20px;
+    }
+
+    .event-card h3 {
+        font-size: 26px;
+    }
+
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+        padding: 75px 20px;
+    }
+
+    .countdown-section h2 {
+        font-size: 36px;
+    }
+
+    .countdown-container {
+        margin-top: 40px;
+
+        gap: 10px;
+    }
+
+    .countdown-box {
+        padding: 20px 8px;
+    }
+
+    .countdown-box span {
+        font-size: 30px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid {
+        margin-top: 45px;
+
+        gap: 7px;
+    }
+
+
+    /* RSVP */
+
+    #rsvpForm {
+        margin-top: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .radio-group {
+        flex-wrap: wrap;
+    }
+
+    .radio-group label {
+        padding: 9px 12px;
+    }
+
+
+    /* MUSIC BUTTON */
+
+    .music-button {
+        width: 42px;
+        height: 42px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 18px;
+
+        font-size: 38px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 40px 20px;
+    }
+
+}/* =========================
+   WEDDING GIFT
+========================= */
+
+.gift-section {
+    background: #ebe4da;
+}
+
+.gift-container {
+    max-width: 450px;
+
+    margin: 50px auto 0;
+}
+
+.gift-card {
+    padding: 45px 30px;
+
+    background: #f5f1eb;
+
+    border: 1px solid rgba(61, 56, 50, 0.15);
+
+    box-shadow:
+        0 10px 30px rgba(61, 56, 50, 0.06);
+
+    text-align: center;
+}
+
+.gift-icon {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.gift-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+}
+
+.gift-name {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    opacity: 0.65;
+}
+
+.account-number {
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+.copy-button {
+    margin-top: 25px;
+
+    padding: 13px 20px;
+
+    border: 1px solid #3d3832;
+
+    background: #3d3832;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.3s ease;
+}
+
+.copy-button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+.copy-button:active {
+    transform: translateY(1px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .gift-container {
+        margin-top: 40px;
+    }
+
+    .gift-card {
+        padding: 35px 20px;
+    }
+
+    .account-number {
+        font-size: 18px;
+    }
+
+}/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 85px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(61, 56, 50, 0.25);
+    border-radius: 50%;
+
+    background: #f5f1eb;
+    color: #3d3832;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #3d3832;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.back-to-top:active {
+    transform: translateY(1px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+
+        right: 15px;
+        bottom: 70px;
+
+        font-size: 18px;
+    }
+
+}
